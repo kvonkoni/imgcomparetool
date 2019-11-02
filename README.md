@@ -28,6 +28,10 @@ To compile new versions of the portable applications, run
 >> pyinstaller --onefile --add-data C:\Users\kvonk\Miniconda3\Lib\site-packages\imagehash;imagehash --clean --noconsole --noconfirm --name ImgCompareTool ui.py
 ```
 
+```bash
+>> pyinstaller --onefile --add-data /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/imagehash:imagehash --add-data /Library/Frameworks/Python.framework/Versions/3.8/lib/tcl8.6:tcl --add-data /Library/Frameworks/Python.framework/Versions/3.8/lib/tk8.6:tk --clean --noconsole --noconfirm --name ImgCompareTool ui.py
+```
+
 Due to a bug in the imagehash package, you must force PyInstaller to include the directory. Replace "C:\Users\kvonk\Miniconda3\Lib\site-packages\imagehash" with the path to imagehash.
 
 ## Image Similarity

@@ -8,6 +8,7 @@ from imgcomparetool import ImageList
 
 def main():
     # GUI Parameters
+    sg.SetOptions(button_color=sg.COLOR_SYSTEM_DEFAULT)
     text_size = (25, 1)
     layout = [  [sg.Text('Enter the following details to compare your list of images.')],
                 [sg.Text('Select the input CSV file', size=text_size), sg.InputText(), sg.FileBrowse()],
