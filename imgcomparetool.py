@@ -27,6 +27,12 @@ class ImageList(object):
         self.filename_pair_list = filename_pair_list
         self.image_pair_list = image_pair_list
     
+    def __eq__(self, other):
+        if isinstance(other, ImageList):
+            return self.image_pair_list == other.image_pair_list
+        else:
+            return False
+    
     def compare(self, output_filename):
         result = []
 
