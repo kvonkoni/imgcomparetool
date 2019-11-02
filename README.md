@@ -1,6 +1,6 @@
-# ImgCompare
+# ImgCompareTool
 
-ImgCompare is a Python package for creating comparing pairs of images.
+ImgCompareTool is a Python package for creating comparing pairs of images.
 
 ## Installation
 
