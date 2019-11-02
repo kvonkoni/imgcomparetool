@@ -15,7 +15,8 @@ class TestImageCompareTools(unittest.TestCase):
 
     def test_expected_order(self):
 
-        # Getting the absolute paths of the test images
+        # Getting the absolute paths of the test images, and
+        # setting the expected similarity order
         expected_order = [
             (os.path.abspath('a01.jpg'), os.path.abspath('a02.jpg')),
             (os.path.abspath('b01.jpg'), os.path.abspath('b02.jpg')),
@@ -24,6 +25,8 @@ class TestImageCompareTools(unittest.TestCase):
             (os.path.abspath('c01.jpg'), os.path.abspath('c02.jpg'))
         ]
 
+        # Setting an initial order that is different from 
+        # the expected order
         load_order = [
             (os.path.abspath('c01.jpg'), os.path.abspath('c02.jpg')),
             (os.path.abspath('b01.jpg'), os.path.abspath('b02.jpg')),
@@ -46,6 +49,7 @@ class TestImageCompareTools(unittest.TestCase):
         for element in sorted_result:
             result_order.append((element[0], element[1]))
         
+        # Assert that the resulting order matches the expected order
         self.assertEqual(expected_order, result_order)
 
 if __name__ == '__main__':
