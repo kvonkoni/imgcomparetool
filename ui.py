@@ -4,7 +4,6 @@
 
 import os, sys
 import PySimpleGUI as sg
-
 from imgcomparetool import ImageList
 
 def main():

@@ -2,7 +2,6 @@
 
 import os, sys
 import csv
-import PIL
 import unittest
 
 # Add one folder level up to sys.path
