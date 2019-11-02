@@ -3,3 +3,4 @@ imagehash
 Pillow
 setuptools
 time
+unittest
