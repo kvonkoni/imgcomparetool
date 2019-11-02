@@ -23,9 +23,17 @@ class TestImageCompareTools(unittest.TestCase):
             (os.path.abspath('b01.jpg'), os.path.abspath('b04.jpg')),
             (os.path.abspath('c01.jpg'), os.path.abspath('c02.jpg'))
         ]
+
+        load_order = [
+            (os.path.abspath('c01.jpg'), os.path.abspath('c02.jpg')),
+            (os.path.abspath('b01.jpg'), os.path.abspath('b02.jpg')),
+            (os.path.abspath('b01.jpg'), os.path.abspath('b03.jpg')),
+            (os.path.abspath('b01.jpg'), os.path.abspath('b04.jpg')),
+            (os.path.abspath('a01.jpg'), os.path.abspath('a02.jpg'))
+        ]
     
         # Creating the test input CSV
-        tuple_list_to_csv('test_image_input.csv', ['image1', 'image2'], expected_order)
+        tuple_list_to_csv('test_image_input.csv', ['image1', 'image2'], load_order)
 
         # Loading and comparing images
         image_list = ImageList('test_image_input.csv')
@@ -33,7 +41,7 @@ class TestImageCompareTools(unittest.TestCase):
 
         # Reading the output CSV
         result = csv_to_tuple_list('test_image_output.csv')
-        sorted_result = sorted(result, key=lambda x: x[1])
+        sorted_result = sorted(result, key=lambda x: x[2])
         result_order = []
         for element in sorted_result:
             result_order.append((element[0], element[1]))
