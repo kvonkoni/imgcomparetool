@@ -20,6 +20,14 @@ To use the tool as a portable application, download and run the appropriate app 
 
 
 
+## Build
+
+To compile new versions of the portable applications, run
+
+```bash
+pyinstaller --onefile --clean --noconsole --noconfirm --name ImgCompareTool ui.py
+```
+
 ## Image Similarity
 
 In broad strokes, two pictures are similar when they have the same colours in the same places. This can sometimes be complicated if a photo has undergone a transformation (e.g. rotated, cropped, brightened/darkened).
