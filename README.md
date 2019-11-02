@@ -9,7 +9,7 @@ ImgCompareTool can be used in two ways: as a Python module to use in your own sc
 To install the Python module, simply clone the repository and run
 
 ```bash
-python setup.py install
+>> python setup.py install
 ```
 
 from the repository's root directory.
@@ -25,8 +25,10 @@ To use the tool as a portable application, download and run the appropriate app 
 To compile new versions of the portable applications, run
 
 ```bash
-pyinstaller --onefile --clean --noconsole --noconfirm --name ImgCompareTool ui.py
+>> pyinstaller --onefile --add-data C:\Users\kvonk\Miniconda3\Lib\site-packages\imagehash;imagehash --clean --noconsole --noconfirm --name ImgCompareTool ui.py
 ```
+
+Due to a bug in the imagehash package, you must force PyInstaller to include the directory. Replace "C:\Users\kvonk\Miniconda3\Lib\site-packages\imagehash" with the path to imagehash.
 
 ## Image Similarity
 
