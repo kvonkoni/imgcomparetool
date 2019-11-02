@@ -17,7 +17,7 @@ if os.path.isfile(requirementPath):
         long_description = fh.read()
 
 setup(name='imgcomparetool',
-      version='v0.1.0',
+      version='v0.1',
       author='Kier von Konigslow',
       author_email='kvonkonigslow@gmail.com',
       maintainer='Ferris',
