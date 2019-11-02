@@ -1,0 +1,6 @@
+image1,image2,similar,elapsed
+C:\Users\kvonk\python\imgcomparetool\test\a01.jpg,C:\Users\kvonk\python\imgcomparetool\test\a02.jpg,0,0.30900096893310547
+C:\Users\kvonk\python\imgcomparetool\test\b01.jpg,C:\Users\kvonk\python\imgcomparetool\test\b02.jpg,2,0.324998140335083
+C:\Users\kvonk\python\imgcomparetool\test\b01.jpg,C:\Users\kvonk\python\imgcomparetool\test\b03.jpg,23,0.23199987411499023
+C:\Users\kvonk\python\imgcomparetool\test\b01.jpg,C:\Users\kvonk\python\imgcomparetool\test\b04.jpg,25,0.3059999942779541
+C:\Users\kvonk\python\imgcomparetool\test\c01.jpg,C:\Users\kvonk\python\imgcomparetool\test\c02.jpg,34,0.10700130462646484
