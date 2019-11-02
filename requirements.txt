@@ -1,6 +1,7 @@
 csv
 imagehash
 Pillow
+PySimpleGUI
 setuptools
 time
 unittest
