@@ -2,10 +2,6 @@
 
 ImgCompareTool is a Python (3.x) package for comparing the similarity of pairs of images.
 
-## Table of Contents
-
-[toc]
-
 ## Installation
 
 ImgCompareTool can be used in two ways: as a Python (3.x) module to use in your own script or, alternatively, as a portable application with a graphical user interface (available as portable applications for Windows and MacOS in addition to a Python script).
@@ -39,7 +35,7 @@ To install the Python module, simply clone the repository to any location and ru
 >> python setup.py install
 ```
 
-from the repository's root directory.
+from the repository's root directory. Requisite packages will be installed automatically and can be found in [requirements.txt](requirements.txt).
 
 To use the ImgCompileTool GUI from your Python (3.x) interpreter, simple copy the ui.py file from the repository to a location of your choice and run
 
