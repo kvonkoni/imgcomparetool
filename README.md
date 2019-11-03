@@ -10,11 +10,11 @@ ImgCompareTool can be used in two ways: as a Python (3.x) module to use in your 
 
 ###### Windows 10
 
-Download the current release of ImgCompareTool-win10.exe to your desired location and run the application.
+Download the current release of ImgCompareTool-win10.exe, located on the [releases]( https://gitlab.com/kvonkoni/imgcomparetool/-/releases ) page, to your desired location and run the application.
 
 ###### Mac OS 10.15
 
-Download and extract ImgCompareTool-macos-10.15.zip to your desired location. Run the ImgCompareTool file in the extracted directory.
+Download and extract ImgCompareTool-macos-10.15.zip, located on the [releases]( https://gitlab.com/kvonkoni/imgcomparetool/-/releases) page, to your desired location. Run the ImgCompareTool file in the extracted directory.
 
 ###### Mac OS 10.14
 
@@ -137,7 +137,7 @@ To compile new versions of the portable applications on Windows, run
 ```bash
 >> pyinstaller --onefile --add-data <Path to Python>\Lib\site-packages\imagehash;imagehash --clean --noconsole --noconfirm --name ImgCompareTool ui.py
 ```
-from the root of the repository. This will create a single .exe file that can be run by the end-user on Windows.
+from the root of the repository. This will create a single .exe file that can be run by the end-user on Windows. Distribute it to the end-users by uploading the .exe to the release folder and adding a link to the release tag notes.
 
 Due to a bug in the imagehash package, you must force PyInstaller to include the package directory. Replace "<Path to Python>\Lib\site-packages\imagehash" with the path to imagehash package on your environment.
 
@@ -152,7 +152,7 @@ from the root of the repository.
 
 Due to a bug in the PyInstaller for MacOS, you must force PyInstaller to include the imagehash, Tk, and Tcl package directories. Tk and Tcl are required for the GUI application Tkinter, which is a dependency of PySimpleGUI. Replace the above paths to these directories with the appropriate ones from your environment.
 
-Compress the ImgCompareTool directory and distribute this to users. The tool cannot be run from the .app file since the software is not signed.
+Compress the ImgCompareTool directory and distribute this to the end-users by uploading the .zip to the release folder and adding a link to the release tag notes. The tool cannot be run from the .app file since the software is not signed.
 
 ###### Mac OS 10.14
 
