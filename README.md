@@ -38,11 +38,11 @@ To compile new versions of the portable application on MacOS (10.15 or later), r
 ```
 from the root of the repository.
 
-Due to a bug in the PyInstaller for MacOS, you must force PyInstaller to include the imagehash, Tk, and Tcl directories. Tk and Tcl are required for the UI library Tkinter. Replace the above paths with the appropriate ones for your environment with the path to imagehash package on your environment.
+Due to a bug in the PyInstaller for MacOS, you must force PyInstaller to include the imagehash, Tk, and Tcl packages. Tk and Tcl are required for the UI library Tkinter. Replace the above paths with the appropriate ones for your environment.
 
-Due to a bug in MacOS 10.14 (Mjoave), the application that was compiled through PyInstaller will cause the system to crash. Updating to MacOS 10.15 (Catalina) will resolve this issue.
+Due to a bug in MacOS 10.14 (Mojave), the application that was compiled through PyInstaller will cause the system to crash. Updating to MacOS 10.15 (Catalina) will resolve this issue.
 
-For MacOS 10.14, the application must be run through a Python3 interpreter. To run the graphical application on OS 10.14, use the following steps:
+For MacOS 10.14, the application must be run through the Python3 interpreter. To run the graphical application on OS 10.14, use the following steps:
 ```bash
 >> python setup.py install
 >> python ui.py

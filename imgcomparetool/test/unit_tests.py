@@ -4,10 +4,6 @@ import os, sys
 import csv
 import unittest
 
-# Add one folder level up to sys.path
-lib_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), os.pardir))
-sys.path.append(lib_path)
-
 from imgcomparetool import ImageList, csv_to_tuple_list, tuple_list_to_csv
 
 class TestImageCompareTools(unittest.TestCase):

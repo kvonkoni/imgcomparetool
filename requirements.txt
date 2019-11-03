@@ -1,6 +1,3 @@
-csv
 imagehash
 Pillow
 PySimpleGUI
-time
-unittest
