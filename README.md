@@ -44,7 +44,7 @@ Download and extract ImgCompareTool-macos-10.15.zip, located on the [releases](h
 
 Due to a known bug in OS 10.14 (Mojave) that causes Tkinter-based applications compiled using PyInstaller to crash the system, ImgCompareTool must be run using a Python (3.x) interpreter when using this operating system.
 
-To run the graphical application on OS 10.14, use the following steps:
+To run the graphical application on OS 10.14, download the source from the [releases](https://gitlab.com/kvonkoni/imgcomparetool/-/releases) page. Once extracted, navigate to the root directory and use the following two commands:
 
 ```bash
 >> python setup.py install
