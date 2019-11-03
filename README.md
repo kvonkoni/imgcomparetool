@@ -164,7 +164,7 @@ Version information for the package is stored in the setup.py file in the root o
 
 ```python
 setup(  name='imgcomparetool',
-        version='0.1',
+        version='0.1.0',
         ...
      )
 ```
