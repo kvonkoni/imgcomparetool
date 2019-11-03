@@ -40,7 +40,7 @@ Download the current release of ImgCompareTool-win10.exe, located on the [releas
 
 Download and extract ImgCompareTool-macos-10.15.zip, located on the [releases](https://gitlab.com/kvonkoni/imgcomparetool/-/releases) page, to your desired location. Run the ImgCompareTool file in the extracted directory.
 
-###### Mac OS 10.14
+###### Mac OS 10.14 <a name="installation-10-14"></a>
 
 Due to a known bug in OS 10.14 (Mojave) that causes Tkinter-based applications compiled using PyInstaller to crash the system, ImgCompareTool must be run using a Python (3.x) interpreter when using this operating system.
 
@@ -178,7 +178,7 @@ Compress the ImgCompareTool directory and distribute this to the end-users by ma
 
 ###### Mac OS 10.14
 
-Due to the bug mentioned in [Installation](#Installation), the application must be run through a Python interpreter for this operating system. Therefore, there is no need to build and release a portable application.
+Due to the bug mentioned in [Installation](#installation-10-14), the application must be run through a Python interpreter for this operating system. Therefore, there is no need to build and release a portable application.
 
 #### Python package (platform-independent)
 
