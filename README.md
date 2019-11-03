@@ -4,7 +4,7 @@ ImgCompareTool is a Python (3.x) package for comparing the similarity of pairs o
 
 ## Table of Contents
 
-{:toc}
+[toc]
 
 ## Installation
 
