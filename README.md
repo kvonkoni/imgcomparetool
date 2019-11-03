@@ -1,12 +1,35 @@
 # ImgCompareTool
 
-ImgCompareTool is a Python package for creating comparing pairs of images.
+ImgCompareTool is a Python (3.x) package for comparing the similarity of pairs of images.
 
 ## Installation
 
-ImgCompareTool can be used in two ways: as a Python module to use in your own script or as a portable application with a simple GUI.
+ImgCompareTool can be used in two ways: as a Python (3.x) module to use in your own script or, alternatively, as a portable application with a graphical user interface (available as portable applications for Windows and MacOS in addition to a Python script).
 
-To install the Python module, simply clone the repository and run
+#### Portable application
+
+###### Windows 10
+
+Download the current release of ImgCompareTool-win10.exe to your desired location and run the application.
+
+###### Mac OS 10.15
+
+Download and extract ImgCompareTool-macos-10.15.zip to your desired location. Run the ImgCompareTool file in the extracted directory.
+
+###### Mac OS 10.14
+
+Due to a known bug in OS 10.14 (Mojave) that causes Tkinter-based applications compiled using PyInstaller to crash the system, ImgCompareTool must be run using a Python (3.x) interpreter when using this operating system.
+
+To run the graphical application on OS 10.14, use the following steps:
+
+```bash
+>> python setup.py install
+>> python ui.py
+```
+
+#### Python package (platform-independent)
+
+To install the Python module, simply clone the repository to any location and run
 
 ```bash
 >> python setup.py install
@@ -14,13 +37,31 @@ To install the Python module, simply clone the repository and run
 
 from the repository's root directory.
 
-To use the tool as a portable application, download and run the appropriate app for your operating system from the root directory. The ImgCompareTool application is available for both Windows and MacOS.
+To use the ImgCompileTool GUI from your Python (3.x) interpreter, simple copy the ui.py file from the repository to a location of your choice and run
+
+```bash
+>> python ui.py
+```
+
+Since this package uses PySimpleGUI, the graphical interface run from the interpreter in this way will work on Windows, MacOS, and Linux.
 
 ## Usage
 
+The tool compared 
+
+#### Portable application
 
 
-## Build
+
+#### Python package
+
+The package can be used as part of a Python script using the ImageList class.
+
+## Build and Release
+
+#### Portable application
+
+###### Windows 10
 
 To compile new versions of the portable applications on Windows, run
 
@@ -29,7 +70,9 @@ To compile new versions of the portable applications on Windows, run
 ```
 from the root of the repository. This will create a single .exe file that can be run by the end-user on Windows.
 
-Due to a bug in the imagehash package, you must force PyInstaller to include the directory. Replace "<Path to Python>\Lib\site-packages\imagehash" with the path to imagehash package on your environment.
+Due to a bug in the imagehash package, you must force PyInstaller to include the package directory. Replace "<Path to Python>\Lib\site-packages\imagehash" with the path to imagehash package on your environment.
+
+###### Mac OS 10.15
 
 To compile new versions of the portable application on MacOS (10.15 or later), run
 
@@ -38,14 +81,23 @@ To compile new versions of the portable application on MacOS (10.15 or later), r
 ```
 from the root of the repository.
 
-Due to a bug in the PyInstaller for MacOS, you must force PyInstaller to include the imagehash, Tk, and Tcl packages. Tk and Tcl are required for the UI library Tkinter. Replace the above paths with the appropriate ones for your environment.
+Due to a bug in the PyInstaller for MacOS, you must force PyInstaller to include the imagehash, Tk, and Tcl package directories. Tk and Tcl are required for the GUI application Tkinter, which is a dependency of PySimpleGUI. Replace the above paths to these directories with the appropriate ones from your environment.
 
-Due to a bug in MacOS 10.14 (Mojave), the application that was compiled through PyInstaller will cause the system to crash. Updating to MacOS 10.15 (Catalina) will resolve this issue.
+Compress the ImgCompareTool directory and distribute this to users. The tool cannot be run from the .app file since the software is not signed.
 
-For MacOS 10.14, the application must be run through the Python3 interpreter. To run the graphical application on OS 10.14, use the following steps:
-```bash
->> python setup.py install
->> python ui.py
+###### Mac OS 10.14
+
+Due to the bug mentioned in [Installation and Use](Mac OS 10.14), the application must be run through a Python interpreter for this operating system. Therefore, there is no need to build and release a portable application.
+
+#### Python package (platform-independent)
+
+Version information for the package is stored in the setup.py file in the root of the repository. Make sure to update the version parameter during releases.
+
+```python
+setup(  name='imgcomparetool',
+        version='0.1',
+        ...
+     )
 ```
 
 ## Image Similarity
@@ -70,7 +122,7 @@ On the other hand, the measure should be less sensitive to:
 
 ## Testing
 
-
+The ImgCompareTool package includes a unit test script.
 
 ## Contributing
 
