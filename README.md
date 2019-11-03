@@ -2,6 +2,10 @@
 
 ImgCompareTool is a Python (3.x) package for comparing the similarity of pairs of images.
 
+## Table of Contents
+
+{:toc}
+
 ## Installation
 
 ImgCompareTool can be used in two ways: as a Python (3.x) module to use in your own script or, alternatively, as a portable application with a graphical user interface (available as portable applications for Windows and MacOS in addition to a Python script).
@@ -43,19 +47,88 @@ To use the ImgCompileTool GUI from your Python (3.x) interpreter, simple copy th
 >> python ui.py
 ```
 
-Since this package uses PySimpleGUI, the graphical interface run from the interpreter in this way will work on Windows, MacOS, and Linux.
+Since this package uses PySimpleGUI, the graphical interface, run from the interpreter in this way, will work on Windows, MacOS, and Linux.
 
 ## Usage
 
-The tool compared 
+The tool compares a list of image pairs for similarity.
+
+#### Input
+
+The tool takes as input the path to a .csv file with two fields (image1 and image2), representing the full path to image1 and image2, respectively. The .csv should contain a header row.
+
+Example of an input .csv:
+
+| image1 | image2 |
+|------------|-------------|
+| <full path>/image1a.png | <full path>/image2a.png |
+| <full path>/image1b.png | <full path>/image2b.png |
+| <full path>/image1c.png | <full path>/image2c.png |
+| <full path>/image1d.png | <full path>/image2d.png |
+
+#### Output
+
+The tool outputs a .csv file with four fields (image1, image2, similarity, and elapsed), representing the full path to image1, the full path to image2, the measure of similarity, and the elapsed time in seconds, respectively. The more similar the images, the lower the similarity measure, with identical images having a similarity measure of 0.
+
+Example of an output .csv:
+
+| image1 | image2 | similarity | elapsed |
+|------------|-------------|-------------|-------------|
+| <full path>/image1a.png | <full path>/image2a.png | 0 | 0.157 |
+| <full path>/image1b.png | <full path>/image2b.png |5 | 0.99845 |
+| <full path>/image1c.png | <full path>/image2c.png |20 | 1.6885 |
+| <full path>/image1d.png | <full path>/image2d.png |35 | 0.824 |
 
 #### Portable application
 
+The portable application has three fields.
 
+![The GUI for ImgCompareTool](sampleUI.png)
+
+**Select the input CSV file**: Click browse to select the input .csv file, or type its full path into the textbox.
+
+**Enter the output file name**: Type in the name for the output .csv file. Default is image_comparison_result.csv.
+
+**Select output CSV folder**: Click browse to select the output folder, or type its full path into the textbox. Must have write permissions on the selected folder.
+
+Click the **Submit** button to run the application.
 
 #### Python package
 
 The package can be used as part of a Python script using the ImageList class.
+
+Usage of the package is illustrated using the following minimal example:
+
+```python
+#!/usr/bin/env python
+
+"""minimal_example.py: a minimal example for the imgcomparetool package"""
+
+from imgcomparetool import ImageList
+
+def main():
+    
+    # Loading and comparing images
+    image_list = ImageList('test_image_input.csv')
+    image_list.compare('test_image_output.csv')
+
+if __name__ == '__main__':
+    main()
+```
+
+class **imgcomparetool.ImageList( input_filename )**
+
+Parameters:
+
+* input_filename: string
+  * the full or relative path to the input CSV file listing the pairs of images.
+
+method **imgcomparetool.ImageList.compare( output_filename )**
+
+Parameters:
+
+* input_filename: string
+  * the full or relative path to the output CSV file listing the pairs of images, similarity, and elapsed time.
 
 ## Build and Release
 
@@ -120,9 +193,25 @@ On the other hand, the measure should be less sensitive to:
 
 ·     Rotation
 
+The ImgCompareTool uses the imagehash package for Python to calculate the similarity measure.
+
+[Github imagehash repository]( https://github.com/JohannesBuchner/imagehash)
+
 ## Testing
 
 The ImgCompareTool package includes a unit test script.
+
+While image similarity can sometimes be subjective, testing the compare method should of the tool should enforce an agreed-upon similarity order for test images.
+
+The unit test passes when five pairs of images are ranked in the correct order, from most similar to least similar.
+
+The test image pairs:
+
+![Order of similarity enforced through testing](sampleOrder.png)
+
+The top pair of images should have a similar measure of 0, since they are identical. The second pair differ only by a colour filter applied to the right picture. In the third pair, the right image is an imitation of the left one, but differs significantly. The fourth pair are similar in average colour, but differ in every other way. Finally, the bottom pair differ significantly.
+
+The ImgCompareTool agrees with this order, giving the pairs similarity measures of 0, 2, 23, 25, and 34 (from top to bottom). The scores themselves are not as important as the order. The script unit_tests.py asserts this order, passing when the image pairs are ranked in this order.
 
 ## Contributing
 
