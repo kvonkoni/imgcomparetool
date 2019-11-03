@@ -24,7 +24,7 @@ On the other hand, the measure should be less sensitive to:
 
 The ImgCompareTool uses the imagehash package for Python to calculate the similarity measure.
 
-[Github imagehash repository]( https://github.com/JohannesBuchner/imagehash)
+[Github imagehash repository](https://github.com/JohannesBuchner/imagehash)
 
 ## Installation
 
@@ -34,11 +34,11 @@ ImgCompareTool can be used in two ways: as a Python (3.x) package to use in your
 
 ###### Windows 10
 
-Download the current release of ImgCompareTool-win10.exe, located on the [releases]( https://gitlab.com/kvonkoni/imgcomparetool/-/releases ) page, to your desired location and run the application.
+Download the current release of ImgCompareTool-win10.exe, located on the [releases](https://gitlab.com/kvonkoni/imgcomparetool/-/releases) page, to your desired location and run the application.
 
 ###### Mac OS 10.15
 
-Download and extract ImgCompareTool-macos-10.15.zip, located on the [releases]( https://gitlab.com/kvonkoni/imgcomparetool/-/releases) page, to your desired location. Run the ImgCompareTool file in the extracted directory.
+Download and extract ImgCompareTool-macos-10.15.zip, located on the [releases](https://gitlab.com/kvonkoni/imgcomparetool/-/releases) page, to your desired location. Run the ImgCompareTool file in the extracted directory.
 
 ###### Mac OS 10.14
 
@@ -178,7 +178,7 @@ Compress the ImgCompareTool directory and distribute this to the end-users by ma
 
 ###### Mac OS 10.14
 
-Due to the bug mentioned in [Installation](Installation), the application must be run through a Python interpreter for this operating system. Therefore, there is no need to build and release a portable application.
+Due to the bug mentioned in [Installation](#Installation), the application must be run through a Python interpreter for this operating system. Therefore, there is no need to build and release a portable application.
 
 #### Python package (platform-independent)
 
