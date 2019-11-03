@@ -207,6 +207,12 @@ The top pair of images should have a similarity measure of 0, since they are ide
 
 The ImgCompareTool agrees with this order, giving the pairs similarity measures of 0, 2, 23, 25, and 34 (from top to bottom). The scores themselves are not as important as the order. The script unit_tests.py asserts this order, passing when the image pairs are ranked in this order.
 
+To run the test, navigate to the imgcomparetool/test folder and run the following command:
+
+```python
+>> python unit_test.py
+```
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
