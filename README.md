@@ -22,17 +22,31 @@ To use the tool as a portable application, download and run the appropriate app 
 
 ## Build
 
-To compile new versions of the portable applications, run
+To compile new versions of the portable applications on Windows, run
 
 ```bash
->> pyinstaller --onefile --add-data C:\Users\kvonk\Miniconda3\Lib\site-packages\imagehash;imagehash --clean --noconsole --noconfirm --name ImgCompareTool ui.py
+>> pyinstaller --onefile --add-data <Path to Python>\Lib\site-packages\imagehash;imagehash --clean --noconsole --noconfirm --name ImgCompareTool ui.py
 ```
+from the root of the repository. This will create a single .exe file that can be run by the end-user on Windows.
+
+Due to a bug in the imagehash package, you must force PyInstaller to include the directory. Replace "<Path to Python>\Lib\site-packages\imagehash" with the path to imagehash package on your environment.
+
+To compile new versions of the portable application on MacOS (10.15 or later), run
 
 ```bash
->> pyinstaller --onefile --add-data /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/imagehash:imagehash --add-data /Library/Frameworks/Python.framework/Versions/3.8/lib/tcl8.6:tcl --add-data /Library/Frameworks/Python.framework/Versions/3.8/lib/tk8.6:tk --clean --noconsole --noconfirm --name ImgCompareTool ui.py
+>> pyinstaller --add-data /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/imagehash:imagehash --add-data /Library/Frameworks/Python.framework/Versions/3.8/lib/tcl8.6:tcl --add-data /Library/Frameworks/Python.framework/Versions/3.8/lib/tk8.6:tk --clean --noconsole --noconfirm --name ImgCompareTool ui.py
 ```
+from the root of the repository.
 
-Due to a bug in the imagehash package, you must force PyInstaller to include the directory. Replace "C:\Users\kvonk\Miniconda3\Lib\site-packages\imagehash" with the path to imagehash.
+Due to a bug in the PyInstaller for MacOS, you must force PyInstaller to include the imagehash, Tk, and Tcl directories. Tk and Tcl are required for the UI library Tkinter. Replace the above paths with the appropriate ones for your environment with the path to imagehash package on your environment.
+
+Due to a bug in MacOS 10.14 (Mjoave), the application that was compiled through PyInstaller will cause the system to crash. Updating to MacOS 10.15 (Catalina) will resolve this issue.
+
+For MacOS 10.14, the application must be run through a Python3 interpreter. To run the graphical application on OS 10.14, use the following steps:
+```bash
+>> python setup.py install
+>> python ui.py
+```
 
 ## Image Similarity
 
