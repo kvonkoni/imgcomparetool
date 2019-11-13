@@ -4,7 +4,7 @@
 
 import os, sys
 import PySimpleGUI as sg
-from imgcomparetool import ImageList
+from imgcomparetool.core import stream
 
 def main():
     # GUI Parameters
@@ -24,8 +24,7 @@ def main():
             break
         elif event == 'Submit':
             try:
-                image_list = ImageList(values[0])
-                image_list.compare(os.path.join(values[2], values[1]))
+                stream(values[0], os.path.join(values[2], values[1]))
                 sg.Popup('Comparison successfully completed!', title='Success')
             except Exception as e:
                 sg.Popup(e, title='Exception')

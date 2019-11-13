@@ -1,0 +1,6 @@
+image1,image2,similar,elapsed
+/Users/kier/python/imgcomparetool/imgcomparetool/test/c01.jpg,/Users/kier/python/imgcomparetool/imgcomparetool/test/c02.jpg,34,0.07068204879760742
+/Users/kier/python/imgcomparetool/imgcomparetool/test/b01.jpg,/Users/kier/python/imgcomparetool/imgcomparetool/test/b02.jpg,2,0.15366482734680176
+/Users/kier/python/imgcomparetool/imgcomparetool/test/b01.jpg,/Users/kier/python/imgcomparetool/imgcomparetool/test/b03.jpg,23,0.10524892807006836
+/Users/kier/python/imgcomparetool/imgcomparetool/test/b01.jpg,/Users/kier/python/imgcomparetool/imgcomparetool/test/b04.jpg,25,0.1325969696044922
+/Users/kier/python/imgcomparetool/imgcomparetool/test/a01.jpg,/Users/kier/python/imgcomparetool/imgcomparetool/test/a02.jpg,0,0.10622501373291016
