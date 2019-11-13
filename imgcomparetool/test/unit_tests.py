@@ -4,7 +4,31 @@ import os, sys
 import csv
 import unittest
 
-from imgcomparetool import ImageList, csv_to_tuple_list, tuple_list_to_csv
+# Add one folder level up to sys.path
+lib_path = os.path.abspath(os.path.join(os.path.dirname( __file__ ), os.pardir))
+sys.path.append(lib_path)
+import core
+
+def csv_to_tuple_list(input_filename, header=True):
+    with open(input_filename) as input_csv:
+            csv_reader = csv.reader(input_csv, delimiter=',')
+            tuple_list = []
+            line_count = 0
+            for row in csv_reader:
+                if line_count == 0 and header:
+                    line_count += 1
+                else:
+                    tuple_list.append(tuple(row))
+                    line_count += 1
+    return tuple_list
+
+def tuple_list_to_csv(output_filename, header, tuple_list):
+    with open(output_filename, 'w', newline='') as output_csv:
+            csv_writer = csv.writer(output_csv, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            csv_writer.writerow(header)
+            for element in tuple_list:
+                csv_writer.writerow(element)
+
 
 class TestImageCompareTools(unittest.TestCase):
 
@@ -34,8 +58,7 @@ class TestImageCompareTools(unittest.TestCase):
         tuple_list_to_csv('test_image_input.csv', ['image1', 'image2'], load_order)
 
         # Loading and comparing images
-        image_list = ImageList('test_image_input.csv')
-        image_list.compare('test_image_output.csv')
+        core.stream('test_image_input.csv', 'test_image_output.csv')
 
         # Reading the output CSV
         result = csv_to_tuple_list('test_image_output.csv')
